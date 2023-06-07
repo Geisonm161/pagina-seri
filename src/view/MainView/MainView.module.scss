@@ -1,0 +1,7 @@
+
+@import '../../SASS/MixinGlobal.module.scss';
+
+.background{
+  @include mixinBackground();
+}
+

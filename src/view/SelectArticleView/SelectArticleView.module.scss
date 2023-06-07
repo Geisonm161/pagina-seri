@@ -1,0 +1,16 @@
+.containerMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.tshirt {
+  width: 18%;
+  transition: width 1s;
+  &.tshirt:hover {
+    width: 20%;
+    border: solid 1px white;
+    background: rgba(128, 128, 128, 0.203);
+  }
+}

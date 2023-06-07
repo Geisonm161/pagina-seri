@@ -1,0 +1,17 @@
+@import "../SASS/MixinGlobal.module.scss";
+
+.zoombackground {
+  @include mixinBackgroundZoom();
+
+  &.zoombackground::before {
+    @include mixinZoomBefore();
+  }
+}
+
+.backgroundSelect {
+  @include mixinBackgroundZoom();
+
+  &.backgroundSelect::before {
+    @include mixinZoomBefore(url('../assets/fondo\ encargo-01.png'));
+  }
+}

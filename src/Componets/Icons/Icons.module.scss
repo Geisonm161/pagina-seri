@@ -1,0 +1,32 @@
+
+@import '../../view/MainView/MainView.module.scss';
+
+.containerIcons{
+  display: flex;
+  margin-right: 1rem;
+}
+
+.iconsTopRight{
+  z-index: 3;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  margin-right: 1rem;
+  cursor: pointer;
+
+  @media only screen and (min-width : 980px){
+    display: none;
+  }
+}
+
+.icons{
+  position: relative;
+  top: 0.4rem;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+
+  &h2 .icons:hover{
+    color: blue;
+  }
+}

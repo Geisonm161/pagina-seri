@@ -1,0 +1,11 @@
+.textArea{
+    width: 100%;
+    min-height: 90px;
+    max-height: 150px;
+    resize: vertical;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: auto;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}

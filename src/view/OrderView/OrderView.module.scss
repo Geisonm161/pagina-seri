@@ -1,0 +1,65 @@
+@import "../../SASS/MixinGlobal.module.scss";
+
+.zoomBackground {
+  @include mixinZoomBackground();
+}
+
+.background {
+  @include mixinBackground();
+}
+
+.containerTop{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 56px;
+  background: rgb(1 1 124);
+}
+
+.subContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.containerCentral{
+  background: rgb(255 155 51 / 67%);   
+  border-radius: 15px;
+   width: 500px;
+   min-height: 400px;
+   overflow: hidden;
+   border: 5px solid rgb(1 1 124);
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1% ;
+}
+
+.header{
+  margin-top: 10px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.select{
+  width: 90%;
+  color: black;
+}
+
+.containerButton{
+  display: flex;
+  justify-content: center;
+
+}
+
+.form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
