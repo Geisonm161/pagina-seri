@@ -1,5 +1,4 @@
-
-@import '../SASS/MixinGlobal.module.scss';
+@import "../SASS/MixinGlobal.module.scss";
 
 .containerMain {
   display: flex;
@@ -14,7 +13,12 @@
   justify-content: space-between;
   width: 100%;
   height: 56px;
-  background: black;
+  background: linear-gradient(
+    270deg,
+    rgba(245, 132, 60, 1) 0%,
+    rgba(215, 57, 122, 1) 55%,
+    rgba(89, 89, 206, 1) 100%
+  );
 }
 
 .containerImage {
@@ -31,6 +35,3 @@
   display: flex;
   align-items: center;
 }
-
-
-

@@ -26,6 +26,8 @@ function OrderView() {
     Informacion: "",
   });
 
+  console.log(handleContainerInfoInput, handleContainerInfoSelect)
+
   const options =
     article === "Hoodie"
       ? [{ value: 1, label: "Algodon", header: "tela" }]
@@ -44,7 +46,6 @@ function OrderView() {
   };
 
   const handleInfoInput = (e) => {
-    console.log(e.target.files[0]);
     const { name, value } = e.target;
     setHandleContainerInfoInput({
       ...handleContainerInfoInput,

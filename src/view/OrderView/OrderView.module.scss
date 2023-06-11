@@ -14,7 +14,7 @@
   justify-content: space-between;
   width: 100%;
   height: 56px;
-  background: rgb(1 1 124);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 0.451) 6%, rgba(45, 43, 183, 0.459) 31%, rgba(66, 66, 222, 0.433) 59%, rgba(96, 96, 255, 0.504) 87%);
 }
 
 .subContainer {
@@ -26,17 +26,21 @@
 }
 
 .containerCentral{
-  background: rgb(255 155 51 / 67%);   
+  background: rgb(147 147 238 / 84%);   
   border-radius: 15px;
    width: 500px;
    min-height: 400px;
    overflow: hidden;
-   border: 5px solid rgb(1 1 124);
+
+   @media only screen and (max-width : 800px){
+    width: 90vw;
+   }
 }
 
 .title{
   display: flex;
   justify-content: center;
+  font-size: clamp(0.5em, 5vw, 2em);
   width: 100%;
   margin: 1% ;
 }
@@ -44,6 +48,10 @@
 .header{
   margin-top: 10px;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  @media only screen and (max-width : 800px){
+    margin-top: 0;;
+  }
 }
 
 .select{

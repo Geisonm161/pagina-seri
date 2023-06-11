@@ -15,3 +15,11 @@
     @include mixinZoomBefore(url('../assets/fondo\ encargo-01.png'));
   }
 }
+
+.backgroundMain {
+  @include mixinBackgroundZoom();
+
+  &.backgroundMain::before {
+    @include mixinZoomBefore(url('../assets/04-proceso-de-serigrafia-03.jpg'));
+  }
+}

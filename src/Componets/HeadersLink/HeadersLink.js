@@ -5,18 +5,15 @@ function HeadersLink() {
   return (
     <div>
       <a href="/" className={style.links}>
-        Información taller
+       Taller
       </a>
       <a href="/select" className={style.links}>
         Realizar pedido
       </a>
-      <a href="/" className={style.links}>
-        Trabajos realizados
+      <a href="/products" className={style.links}>
+        Productos
       </a>
-      <a href="/" className={style.links}>
-        Ubicación
-      </a>
-      <a href="/" className={style.links}>
+      <a href="/contact" className={style.links}>
         Contacto
       </a>
     </div>

@@ -28,7 +28,7 @@ function SelectArticleView() {
           onClick={() => navigate("/")}
         />
       </div>
-      <div className={style.containerMain}>
+      <div className={style.subContainer}>
         <img
           src={imageTshirt}
           className={style.tshirt}
