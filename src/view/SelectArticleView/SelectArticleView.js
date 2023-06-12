@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import background from "../../SASS/ZoomBackground.module.scss";
 import style from "./SelectArticleView.module.scss";
 import { useNavigate } from "react-router-dom";
