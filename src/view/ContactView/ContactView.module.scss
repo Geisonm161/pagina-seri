@@ -27,7 +27,7 @@
   height: 500px;
   padding: 1rem;
   border-radius: 20px;
-  overflow: auto;
+  overflow: hidden;
 
   @media only screen and (max-width: 900px) {
     width: 90%;
