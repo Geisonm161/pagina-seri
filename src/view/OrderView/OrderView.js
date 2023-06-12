@@ -26,8 +26,6 @@ function OrderView() {
     Informacion: "",
   });
 
-  console.log(handleContainerInfoInput, handleContainerInfoSelect)
-
   const options =
     article === "Hoodie"
       ? [{ value: 1, label: "Algodon", header: "tela" }]
