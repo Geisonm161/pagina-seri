@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "../../assets/logo_Mesa de trabajo 1.png";
 import stylesGlobal from "../../SASS/StylesGlobal.module.scss";
 import style from "./OrderView.module.scss";
@@ -10,17 +10,24 @@ import background from "../../SASS/ZoomBackground.module.scss";
 import Input from "../../Componets/Input/Input";
 import TextArea from "../../Componets/TextArea/TextArea";
 import Button from "../../Componets/Button/Button";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import ContainerRightPageOrder from "../../Componets/ContainerRightPageOrder/ContainerRightPageOrder";
+import ContainerUploadImages from "../../Componets/ContainerUploadImages/ContainerUploadImages";
+import { getItem, setItem } from "../../services/servicesLocalStorage/servicesLocalStorage";
+
 
 function OrderView() {
+  const navigation = useNavigate();
   const { article } = useParams();
 
-  const [changeIcons, setChangeIcons] = useState();
-  const [handleContainerInfoSelect, setHandleContainerInfoSelect] = useState({
+  const [handleContainerSubInside, setHandleContainerSubInside] = useState();
+  const [changeIcons, setChangeIcons] = useState(); 
+  const [handleContentInfoSelect, setHandleContentInfoSelect] = useState({
     header: "",
     label: "",
   });
-  const [handleContainerInfoInput, setHandleContainerInfoInput] = useState({
+
+  const [handleContentInfoInput, setHandleContentInfoInput] = useState({
     Color: "",
     Cantidad: "",
     Informacion: "",
@@ -30,9 +37,11 @@ function OrderView() {
     article === "Hoodie"
       ? [{ value: 1, label: "Algodon", header: "tela" }]
       : [
+          { value: 0, label: "Select...", header: "" },
           { value: 1, label: "Algodon", header: "tela" },
           { value: 2, label: "Ojo de angel", header: "tela" },
-          { value: 3, label: "Dri Fit", header: "tela" },
+          { value: 3, label: "Dry Fit", header: "tela" },
+          { value: 4, label: "Micro durazno", header: "tela" },
         ];
 
   const handleIconsVariation = () => {
@@ -40,103 +49,140 @@ function OrderView() {
   };
 
   const handleInfoSelect = (value) => {
-    setHandleContainerInfoSelect(value);
+    setHandleContentInfoSelect(value);
   };
 
   const handleInfoInput = (e) => {
     const { name, value } = e.target;
-    setHandleContainerInfoInput({
-      ...handleContainerInfoInput,
+    setHandleContentInfoInput({
+      ...handleContentInfoInput,
       [name]: value,
     });
   };
 
   const handleSendFormulary = (e) => {
     e.preventDefault();
-    console.log(handleContainerInfoInput, "Select", handleContainerInfoSelect);
+    const datosStorage = getItem(process.env.REACT_APP_NAME_ARTICLE) || '[]';
+    console.log(datosStorage);
+    setItem(process.env.REACT_APP_NAME_ARTICLE, [...datosStorage ,handleContentInfoInput]);
+ };
+
+  const handleChangeContainerRight = () => {
+    setHandleContentInfoSelect({ header: "" });
   };
 
+  const handleContainerChange = () => {
+    setHandleContainerSubInside(!handleContainerSubInside);
+  };
+
+  const handleNavigationMainView = () => navigation("/");
+
+  
+
+
   return (
-    <div className={stylesGlobal.containerMain}>
-      <DropdownTop changeIcons={changeIcons} />
-      <div className={style.containerTop}>
-        <div className={stylesGlobal.containerImage}>
-          <img className={stylesGlobal.image} src={Image} alt="logo" />
+    <div className={style.container}>
+      <div className={handleContentInfoSelect.header ? stylesGlobal.containerRightVisible : stylesGlobal.containerMain}>
+        <DropdownTop changeIcons={changeIcons} />
+        <div className={style.containerTop}>
+          <div className={stylesGlobal.containerImage}>
+            <img className={stylesGlobal.image} src={Image} alt="logo" onClick={handleNavigationMainView} />
+          </div>
+
+          <header className={stylesGlobal.viewsPages}>
+            <HeadersLink />
+
+            <Icons
+              handleIconsVariation={handleIconsVariation}
+              changeIcons={changeIcons}
+            />
+          </header>
         </div>
+        <div className={style.subContainer}>
+          {handleContainerSubInside && (
+            <div className={style.containerSubInside}>
+              <ContainerUploadImages
+                handleContainerChange={handleContainerChange}
+              />
+            </div>
+          )}
+          <div className={style.containerCentral}>
+            <h1 className={style.title}>Detallar pedido ({article})</h1>
 
-        <header className={stylesGlobal.viewsPages}>
-          <HeadersLink />
-
-          <Icons
-            handleIconsVariation={handleIconsVariation}
-            changeIcons={changeIcons}
-          />
-        </header>
-      </div>
-      <div className={style.subContainer}>
-        <div className={style.containerCentral}>
-          <h1 className={style.title}>Detallar pedido ({article})</h1>
-
-          <form onSubmit={handleSendFormulary} className={style.form}>
-            {article !== "Article" && (
-              <div className={style.form}>
-                <div className={style.select}>
-                  <h3 className={style.header}>Tipo de tela</h3>
-                  <Select options={options} onChange={handleInfoSelect} />
+            <form onSubmit={handleSendFormulary} className={style.form}>
+              {article !== "Article" && (
+                <div className={style.form}>
+                  <div className={style.select}>
+                    <h3 className={style.header}>Tipo de tela</h3>
+                    <Select options={options} onChange={handleInfoSelect} />
+                  </div>
+                  <div className={style.select}>
+                    <h3 className={style.header}>Color de {article}</h3>
+                    <Input
+                      onChange={handleInfoInput}
+                      name="Color"
+                      type="text"
+                      placeholder="Color aqui"
+                      value={handleContentInfoSelect.Color}
+                      onClick={handleChangeContainerRight}
+                    />
+                  </div>
+                  <div className={style.select}>
+                    <h3 className={style.header}>Cantidad de {article}</h3>
+                    <Input
+                      onChange={handleInfoInput}
+                      name="Cantidad"
+                      type="number"
+                      placeholder="Cantidad aqui"
+                      value={handleContentInfoSelect.Cantidad}
+                      onClick={handleChangeContainerRight}
+                    />
+                  </div>
                 </div>
-                <div className={style.select}>
-                  <h3 className={style.header}>Color de {article}</h3>
-                  <Input
-                    onChange={handleInfoInput}
-                    name="Color"
-                    type="text"
-                    placeholder="Color aqui"
-                    value={handleContainerInfoSelect.Color}
-                  />
-                </div>
-                <div className={style.select}>
-                  <h3 className={style.header}>Subir imagenes</h3>
-                  <Input
-                    onChange={handleInfoInput}
-                    name="file"
-                    type="file"
-                    placeholder="imagen"
-                    value={handleContainerInfoSelect.Color}
-                  />
-                </div>
-                <div className={style.select}>
-                  <h3 className={style.header}>Cantidad de {article}</h3>
-                  <Input
-                    onChange={handleInfoInput}
-                    name="Cantidad"
-                    type="number"
-                    placeholder="Cantidad aqui"
-                    value={handleContainerInfoSelect.Cantidad}
-                  />
-                </div>
+              )}
+              <div className={style.select}>
+                <h3 className={style.header}>Informacion adicional</h3>
+                <TextArea
+                  onChange={handleInfoInput}
+                  name="Informacion"
+                  type="text"
+                  placeholder="Escribir aqui"
+                  value={handleContentInfoInput.Informacion}
+                  onClick={handleChangeContainerRight}
+                />
               </div>
-            )}
-            <div className={style.select}>
-              <h3 className={style.header}>Informacion adicional</h3>
-              <TextArea
-                onChange={handleInfoInput}
-                name="Informacion"
-                type="text"
-                placeholder="Escribir aqui"
-                value={handleContainerInfoInput.Informacion}
-              />
-            </div>
-            <div className={style.containerButton}>
-              <Button
-                onClick={handleSendFormulary}
-                nameButton="Enviar"
-                type="onSubmit"
-              />
-            </div>
-          </form>
+            </form>
+              <div className={style.containerButton}>
+                
+                  <Button
+                    styleButton="Añadir"
+                    nameButton="Subir Imagenes"
+                    onClick={handleContainerChange}
+                  />
+                
+                <Button
+                  styleButton="Enviar"
+                  nameButton="Enviar"
+                  onClick={handleSendFormulary}
+                />
+              </div>
+          </div>
         </div>
+        <div className={background.zoombackground} />
       </div>
-      <div className={background.zoombackground} />
+      {handleContentInfoSelect.label && (
+        <div
+          className={
+            handleContentInfoSelect.header
+              ? style.containerRight
+              : style.containerRightHidden
+          }
+        >
+          <ContainerRightPageOrder
+            handleContentInfoSelect={handleContentInfoSelect}
+          />
+        </div>
+      )}
     </div>
   );
 }

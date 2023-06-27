@@ -1,0 +1,25 @@
+.containerMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+
+  @media only screen and (max-width: 800px) {
+    display: none;
+  }
+}
+
+.headerRight {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.image {
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 1rem;
+}
+
+.infoTela {
+  font-size: 0.8rem;
+}

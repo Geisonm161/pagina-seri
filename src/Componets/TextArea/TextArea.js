@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./TextArea.module.scss";
 
-function Textarea({ name, placeholder, onChange, value }) {
+function Textarea({ name, placeholder, onChange, value, onClick }) {
   return (
     <div>
       <textarea
@@ -10,6 +10,7 @@ function Textarea({ name, placeholder, onChange, value }) {
         value={value}
         onChange={onChange}
         className={style.textArea}
+        onClick={onClick}
       />
     </div>
   );

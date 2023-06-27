@@ -1,30 +1,36 @@
 import React, { useState } from "react";
-import style from "./ContactView.module.scss";
+import style from "./NetworksLocationView.module.scss";
 import Image from "../../assets/logo_Mesa de trabajo 1.png";
 import stylesGlobal from "../../SASS/StylesGlobal.module.scss";
 import { Icons } from "../../Componets/Icons/Icons";
 import DropdownTop from "../../Componets/DropdownTop/DropdownTop";
 import HeadersLink from "../../Componets/HeadersLink/HeadersLink";
-import Link from "../../Componets/ContactsLink/ContanctsLink";
+import Link from "../../Componets/NetworksLink/NetworksLink";
 import Icono from "../../assets/iconos-01.png";
 import Icono2 from "../../assets/iconos-02.png";
 import Icono3 from "../../assets/iconos-03.png";
 import Icono4 from "../../assets/iconos-04.png";
+import { useNavigate } from "react-router-dom";
 
 
 function ContactView() {
+  const navigation = useNavigate();
+
   const [changeIcons, setChangeIcons] = useState();
 
   const handleIconsVariation = () => {
     setChangeIcons(!changeIcons);
   };
 
+  const handleNavigationMainView = () => navigation("/");
+
+
   return (
     <div className={style.containerMain}>
       <DropdownTop changeIcons={changeIcons} />
       <div className={style.containerTop}>
         <div className={stylesGlobal.containerImage}>
-          <img className={stylesGlobal.image} src={Image} alt="logo" />
+          <img className={stylesGlobal.image} src={Image} alt="logo" onClick={handleNavigationMainView}/>
         </div>
 
         <header className={stylesGlobal.viewsPages}>

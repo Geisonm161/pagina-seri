@@ -8,6 +8,14 @@
   @include mixinBackground();
 }
 
+.container{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+
 .containerTop{
   display: flex;
   align-items: center;
@@ -17,6 +25,7 @@
   background: linear-gradient(90deg, rgba(2, 0, 36, 0.451) 6%, rgba(45, 43, 183, 0.459) 31%, rgba(66, 66, 222, 0.433) 59%, rgba(96, 96, 255, 0.504) 87%);
 }
 
+
 .subContainer {
   display: flex;
   justify-content: center;
@@ -25,11 +34,21 @@
   height: 100%;
 }
 
+.containerSubInside{
+  padding: 0.5rem;
+  width: 18rem;
+    position: absolute;
+    border-radius: 15px;
+     z-index: 3;
+     overflow: hidden;
+    background: red;
+}
+
 .containerCentral{
   background: rgb(147 147 238 / 84%);   
   border-radius: 15px;
-   width: 500px;
-   min-height: 400px;
+   width: 400px;
+   min-height: 300px;
    overflow: hidden;
 
    @media only screen and (max-width : 800px){
@@ -40,7 +59,7 @@
 .title{
   display: flex;
   justify-content: center;
-  font-size: clamp(0.5em, 5vw, 2em);
+  font-size: clamp(1.5em, 5vw, 1.5em);
   width: 100%;
   margin: 1% ;
 }
@@ -61,7 +80,9 @@
 
 .containerButton{
   display: flex;
-  justify-content: center;
+  justify-content:space-between;
+  width: 100%;
+  padding: 0.3rem 1rem;
 
 }
 
@@ -71,3 +92,22 @@
   flex-direction: column;
   align-items: center;
 }
+
+.containerRight{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  left: 0px;
+  padding: 2rem;
+  width: 30vw;
+  height: 100vh;
+  background: red;
+
+}
+
+.containerRightHidden{
+  width: 0;
+  height: 0;
+}
+

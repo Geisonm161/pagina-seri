@@ -4,17 +4,17 @@ import style from './HeadersLink.module.scss';
 function HeadersLink() {
   return (
     <div>
-      <a href="/" className={style.links}>
+      <a href="/Taller" className={style.links}>
        Taller
       </a>
       <a href="/select" className={style.links}>
         Realizar pedido
       </a>
       <a href="/products" className={style.links}>
-        Productos
+        Galeria
       </a>
       <a href="/contact" className={style.links}>
-        Contacto
+        Redes y Ubicación
       </a>
     </div>
   );

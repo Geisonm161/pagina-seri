@@ -12,9 +12,6 @@ import imageArticle from "../../assets/article page-01.png";
 function SelectArticleView() {
   const navigate = useNavigate();
 
-
-
-
   const handleAccessView = (e) => {
     navigate(`/order/${e.target.alt}`);
   };
@@ -23,7 +20,7 @@ function SelectArticleView() {
     <div className={style.containerMain}>
       <div className={style.containerButton}>
         <Button
-          access={true}
+          styleButton='Back'
           nameButton="←Volver"
           onClick={() => navigate("/")}
         />

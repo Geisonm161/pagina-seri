@@ -1,0 +1,82 @@
+.icons {
+  transition: none;
+  position: relative;
+  top: 0.4rem;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+
+  &.icons:hover {
+    color: blue;
+  }
+}
+
+
+.containerIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iconCloud {
+  transition: none;
+  font-size: 3rem;
+  color: white;
+  transition: none;
+  
+}
+
+.containerInputImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px dashed blue;
+  width: 70%;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+
+  &:hover{
+    .iconCloud {
+   color: blue;
+  } 
+  }
+  
+}
+
+p{
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.containerPair{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header{
+  font-size: 0.8rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-bottom: 1rem;
+}
+
+h5{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.containerButton{
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}

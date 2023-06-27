@@ -1,0 +1,39 @@
+
+.containerCentral{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.containerImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  max-height: 60vh;
+  background-color: rgba(0, 0, 0, 0.555);
+  padding: 1rem;
+  border-radius: 20px;
+  overflow: auto;
+
+  @media only screen and ( max-width : 900px){
+    width: 90%;
+  }
+
+}
+.image{
+  width: 15rem;
+  margin-bottom: 1rem;
+
+  @media only screen and (max-width : 980px){
+    width: 10rem;
+  }
+}
+
+p {
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

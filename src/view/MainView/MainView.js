@@ -1,25 +1,38 @@
-import React, { useState } from "react";
+import background from "../../SASS/ZoomBackground.module.scss";
 import Image from "../../assets/logo_Mesa de trabajo 1.png";
+import React, { useState } from "react";
 import stylesGlobal from "../../SASS/StylesGlobal.module.scss";
 import style from "./MainView.module.scss";
 import { Icons } from "../../Componets/Icons/Icons";
 import DropdownTop from "../../Componets/DropdownTop/DropdownTop";
 import HeadersLink from "../../Componets/HeadersLink/HeadersLink";
-import background from "../../SASS/ZoomBackground.module.scss";
+import { useNavigate } from "react-router-dom";
+import Button from "../../Componets/Button/Button";
 
 function MainView() {
+  const navigation = useNavigate();
+
   const [changeIcons, setChangeIcons] = useState();
 
   const handleIconsVariation = () => {
     setChangeIcons(!changeIcons);
   };
 
+  const handleNavigationMainView = () => navigation("/");
+
+  const handleChangeRoute = ()=> navigation('/taller');
+
   return (
     <div className={stylesGlobal.containerMain}>
       <DropdownTop changeIcons={changeIcons} />
-      <div className={stylesGlobal.containerTop}>
+      <div className={style.containerTop}>
         <div className={stylesGlobal.containerImage}>
-          <img className={stylesGlobal.image} src={Image} alt="logo" />
+          <img
+            className={stylesGlobal.image}
+            onClick={handleNavigationMainView}
+            src={Image}
+            alt="logo"
+          />
         </div>
 
         <header className={stylesGlobal.viewsPages}>
@@ -31,26 +44,18 @@ function MainView() {
           />
         </header>
       </div>
-      <div className={style.containerCentral}>
-        <div className={style.containerImage}>
-          <img className={style.image} src={Image} alt="logo" />
-          <p>
-            ¡Descubre el Arte Impreso en Nuestro Taller: Serigrafía, Sublimación
-            y DTF! <br /> <br />
-            ¿Buscas dar vida a tus ideas creativas y llevarlas a otro nivel?
-            ¡Estás en el lugar indicado! En nuestro taller, nos especializamos
-            en técnicas de impresión de vanguardia: serigrafía, sublimación y
-            DTF (Direct-to-Film). Permítenos llevarte a un viaje fascinante a
-            través del mundo de la impresión y descubre por qué elegir nuestro
-            taller será una experiencia inolvidable.
-            <br /> <br />
-            Así que, ¿estás listo para dar vida a tus ideas y dejar una
-            impresión duradera en el mundo? ¡Ven a nuestro taller y descubre el
-            poder del arte impreso a través de la serigrafía, la sublimación y
-            el DTF! Te esperamos con los brazos abiertos y la promesa de hacer
-            de tu experiencia con nosotros algo verdaderamente excepcional.
-          </p>
-        </div>
+      <div className={style.containerh1}>
+        <h1 className={style.h1Main}>¿Qué hacemos?</h1>
+      <p className={style.parrafoMain}>
+        Somos especialistas en marcaje textil, serigrafía, regalo promocional e
+        impresión láser y digital.
+      </p>
+
+      <Button
+      nameButton='saber más'
+      styleButton='Saber más'
+      onClick={handleChangeRoute}
+      />
       </div>
       <div className={background.backgroundMain} />
     </div>

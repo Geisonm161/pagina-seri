@@ -46,20 +46,25 @@ import style from "./ProductsView.module.scss";
 import { Icons } from "../../Componets/Icons/Icons";
 import DropdownTop from "../../Componets/DropdownTop/DropdownTop";
 import HeadersLink from "../../Componets/HeadersLink/HeadersLink";
+import { useNavigate } from "react-router-dom";
 
 function ProductosView() {
+  const navigation = useNavigate();
   const [changeIcons, setChangeIcons] = useState();
 
   const handleIconsVariation = () => {
     setChangeIcons(!changeIcons);
   };
 
+  const handleNavigationMainView = () => navigation("/");
+
+
   return (
     <div className={style.containerMain}>
       <DropdownTop changeIcons={changeIcons} />
       <div className={stylesGlobal.containerTop}>
         <div className={stylesGlobal.containerImage}>
-          <img className={stylesGlobal.image} src={Image} alt="logo" />
+          <img className={stylesGlobal.image} src={Image} alt="logo" onClick={handleNavigationMainView} />
         </div>
 
         <header className={stylesGlobal.viewsPages}>

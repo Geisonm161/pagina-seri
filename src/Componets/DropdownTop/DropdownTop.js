@@ -9,10 +9,10 @@ function DropdownTop({ changeIcons }) {
         changeIcons ? style.containerDropdownTrue : style.containerDropdownFalse
       }
   >
-      <a href="/" className={style.header}><IconsInfo/>Taller</a>
+      <a href="/taller" className={style.header}><IconsInfo/>Taller</a>
       <a href="/select" className={style.header}><IconsForm/>Realizar pedido</a>
-      <a href="/products" className={style.header}><IconsImage/>Productos</a>
-      <a href="/contact" className={style.header}><IconsUser/>Contacto</a>
+      <a href="/products" className={style.header}><IconsImage/>Galeria</a>
+      <a href="/contact" className={style.header}><IconsUser/>Redes y Ubicación</a>
     </div>
   ); 
 }

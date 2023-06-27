@@ -16,10 +16,18 @@
   }
 }
 
+.backgroundWorkshop {
+  @include mixinBackgroundZoom();
+
+  &.backgroundWorkshop::before {
+    @include mixinZoomBefore(url('../assets/04-proceso-de-serigrafia-03.jpg'));
+  }
+}
+
 .backgroundMain {
   @include mixinBackgroundZoom();
 
   &.backgroundMain::before {
-    @include mixinZoomBefore(url('../assets/04-proceso-de-serigrafia-03.jpg'));
+    @include mixinZoomBefore(url('../assets/Universo.jpg'));
   }
 }
