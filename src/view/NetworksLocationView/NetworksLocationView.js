@@ -12,7 +12,6 @@ import Icono3 from "../../assets/iconos-03.png";
 import Icono4 from "../../assets/iconos-04.png";
 import { useNavigate } from "react-router-dom";
 
-
 function ContactView() {
   const navigation = useNavigate();
 
@@ -24,13 +23,17 @@ function ContactView() {
 
   const handleNavigationMainView = () => navigation("/");
 
-
   return (
     <div className={style.containerMain}>
       <DropdownTop changeIcons={changeIcons} />
       <div className={style.containerTop}>
         <div className={stylesGlobal.containerImage}>
-          <img className={stylesGlobal.image} src={Image} alt="logo" onClick={handleNavigationMainView}/>
+          <img
+            className={stylesGlobal.image}
+            src={Image}
+            alt="logo"
+            onClick={handleNavigationMainView}
+          />
         </div>
 
         <header className={stylesGlobal.viewsPages}>

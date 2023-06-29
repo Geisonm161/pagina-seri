@@ -1,5 +1,4 @@
-
-.containerCentral{
+.containerCentral {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,23 +16,24 @@
   border-radius: 20px;
   overflow: auto;
 
-  @media only screen and ( max-width : 900px){
+  @media only screen and (max-width: 900px) {
     width: 90%;
   }
-
 }
-.image{
+.image {
   width: 15rem;
   margin-bottom: 1rem;
+  border-radius: 5px;
+  border: solid white 2px;
 
-  @media only screen and (max-width : 980px){
+  @media only screen and (max-width: 980px) {
     width: 10rem;
   }
 }
 
-p {
-  color: white;
+.parrafoWorkshop {
   display: flex;
   justify-content: center;
   text-align: center;
+  color: rgb(255, 255, 255);
 }

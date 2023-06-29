@@ -20,7 +20,7 @@ function SelectArticleView() {
     <div className={style.containerMain}>
       <div className={style.containerButton}>
         <Button
-          styleButton='Back'
+          styleButton="Back"
           nameButton="←Volver"
           onClick={() => navigate("/")}
         />

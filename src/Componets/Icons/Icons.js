@@ -7,6 +7,7 @@ import {
   AiFillPicture,
   AiOutlineEnvironment,
   AiOutlineUser,
+  AiOutlineContainer,
 } from "react-icons/ai";
 
 const Icons = ({ handleIconsVariation, changeIcons }) => {
@@ -27,7 +28,7 @@ const Icons = ({ handleIconsVariation, changeIcons }) => {
   );
 };
 
-const IconsClose = () => <AiOutlineClose className={style.icons} />
+const IconsClose = () => <AiOutlineClose className={style.icons} />;
 
 const IconsInfo = () => <AiOutlineBook className={style.icons} />;
 
@@ -39,4 +40,17 @@ const IconsLocation = () => <AiOutlineEnvironment className={style.icons} />;
 
 const IconsUser = () => <AiOutlineUser className={style.icons} />;
 
-export { Icons, IconsInfo, IconsForm, IconsImage, IconsLocation, IconsUser, IconsClose };
+const IconsMessage = () => (
+  <AiOutlineContainer className={style.iconsMessage} />
+);
+
+export {
+  Icons,
+  IconsInfo,
+  IconsForm,
+  IconsImage,
+  IconsLocation,
+  IconsUser,
+  IconsClose,
+  IconsMessage,
+};

@@ -1,24 +1,23 @@
+@import "../../view/WorkshopView/WorkshopView.module.scss";
 
-@import '../../view/WorkshopView/WorkshopView.module.scss';
-
-.containerIcons{
+.containerIcons {
   display: flex;
   margin-right: 1rem;
 }
 
-.iconsTopRight{
+.iconsTopRight {
   z-index: 3;
   color: rgb(255, 255, 255);
   font-size: 2rem;
   margin-right: 1rem;
   cursor: pointer;
 
-  @media only screen and (min-width : 980px){
+  @media only screen and (min-width: 980px) {
     display: none;
   }
 }
 
-.icons{
+.icons {
   position: relative;
   top: 0.4rem;
   color: rgb(255, 255, 255);
@@ -26,7 +25,15 @@
   margin-right: 0.5rem;
   cursor: pointer;
 
-  &h2 .icons:hover{
+  &h2 .icons:hover {
     color: blue;
   }
+}
+
+.iconsMessage {
+  position: relative;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
 }

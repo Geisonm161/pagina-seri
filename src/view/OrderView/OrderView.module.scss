@@ -8,23 +8,27 @@
   @include mixinBackground();
 }
 
-.container{
+.container {
   display: flex;
   align-items: center;
   width: 100%;
   overflow: hidden;
 }
 
-
-.containerTop{
+.containerTop {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   height: 56px;
-  background: linear-gradient(90deg, rgba(2, 0, 36, 0.451) 6%, rgba(45, 43, 183, 0.459) 31%, rgba(66, 66, 222, 0.433) 59%, rgba(96, 96, 255, 0.504) 87%);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 0.451) 6%,
+    rgba(45, 43, 183, 0.459) 31%,
+    rgba(66, 66, 222, 0.433) 59%,
+    rgba(96, 96, 255, 0.504) 87%
+  );
 }
-
 
 .subContainer {
   display: flex;
@@ -34,80 +38,78 @@
   height: 100%;
 }
 
-.containerSubInside{
+.containerSubInside {
   padding: 0.5rem;
   width: 18rem;
-    position: absolute;
-    border-radius: 15px;
-     z-index: 3;
-     overflow: hidden;
-    background: red;
-}
-
-.containerCentral{
-  background: rgb(147 147 238 / 84%);   
+  position: absolute;
   border-radius: 15px;
-   width: 400px;
-   min-height: 300px;
-   overflow: hidden;
-
-   @media only screen and (max-width : 800px){
-    width: 90vw;
-   }
+  z-index: 3;
+  overflow: hidden;
+  background: red;
 }
 
-.title{
+.containerCentral {
+  background: rgb(147 147 238 / 84%);
+  border-radius: 15px;
+  width: 400px;
+  min-height: 300px;
+  overflow: hidden;
+
+  @media only screen and (max-width: 800px) {
+    width: 90vw;
+  }
+}
+
+.title {
   display: flex;
   justify-content: center;
   font-size: clamp(1.5em, 5vw, 1.5em);
   width: 100%;
-  margin: 1% ;
+  margin: 1%;
 }
 
-.header{
+.header {
   margin-top: 10px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 
-  @media only screen and (max-width : 800px){
-    margin-top: 0;;
+  @media only screen and (max-width: 800px) {
+    margin-top: 0;
   }
 }
 
-.select{
+.select {
   width: 90%;
   color: black;
 }
 
-.containerButton{
+.containerButton {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   width: 100%;
   padding: 0.3rem 1rem;
-
 }
 
-.form{
+.form {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.containerRight{
+.containerRight {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   position: relative;
   left: 0px;
   padding: 2rem;
-  width: 30vw;
   height: 100vh;
-  background: red;
-
+  background: rgba(255, 255, 255, 0.538);
+  width: 20%;
 }
 
-.containerRightHidden{
+.containerRightHidden {
   width: 0;
   height: 0;
 }
-

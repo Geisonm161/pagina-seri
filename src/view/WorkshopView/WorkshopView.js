@@ -9,7 +9,6 @@ import background from "../../SASS/ZoomBackground.module.scss";
 import { useNavigate } from "react-router-dom";
 
 function WorkshopView() {
-
   const navigation = useNavigate();
 
   const [changeIcons, setChangeIcons] = useState();
@@ -18,14 +17,19 @@ function WorkshopView() {
     setChangeIcons(!changeIcons);
   };
 
-  const handleNavigationMainView = ()=> navigation('/');
+  const handleNavigationMainView = () => navigation("/");
 
   return (
     <div className={stylesGlobal.containerMain}>
       <DropdownTop changeIcons={changeIcons} />
       <div className={stylesGlobal.containerTop}>
         <div className={stylesGlobal.containerImage}>
-          <img className={stylesGlobal.image} onClick={handleNavigationMainView} src={Image} alt="logo" />
+          <img
+            className={stylesGlobal.image}
+            onClick={handleNavigationMainView}
+            src={Image}
+            alt="logo"
+          />
         </div>
 
         <header className={stylesGlobal.viewsPages}>
@@ -40,7 +44,7 @@ function WorkshopView() {
       <div className={style.containerCentral}>
         <div className={style.containerImage}>
           <img className={style.image} src={Image} alt="logo" />
-          <p>
+          <p className={style.parrafoWorkshop}>
             ¡Descubre el Arte Impreso en Nuestro Taller: Serigrafía, Sublimación
             y DTF! <br /> <br />
             ¿Buscas dar vida a tus ideas creativas y llevarlas a otro nivel?

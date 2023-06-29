@@ -1,31 +1,26 @@
-
-.containerMain{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+.containerMain {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-
-.subContainer{
-    width: 100%;
+.subContainer {
+  width: 100%;
 }
 
-
-.image{
-
-    width: 50%;
+.image {
+  width: 50%;
 }
 
-.image4{
-    width: 50%;
-    height: 35rem;
+.image4 {
+  width: 50%;
+  height: 35rem;
 
-    @media only screen and (max-width : 980px ){
-        height: 15rem;
-    }
+  @media only screen and (max-width: 980px) {
+    height: 15rem;
+  }
 }
 
-.hoodie4{
-    width: 100%;
+.hoodie4 {
+  width: 100%;
 }
-

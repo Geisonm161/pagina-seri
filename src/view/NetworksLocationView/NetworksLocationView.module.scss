@@ -10,7 +10,8 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 56px;}
+  height: 56px;
+}
 
 .containerCentral {
   display: flex;
@@ -34,17 +35,12 @@
   }
 }
 .image {
-  width: 15rem;
+  width: 16rem;
   margin-bottom: 1rem;
+  border-radius: 5px;
+  border: solid white 2px;
 
   @media only screen and (max-width: 980px) {
     width: 10rem;
   }
-}
-
-p {
-  color: white;
-  display: flex;
-  justify-content: center;
-  text-align: center;
 }

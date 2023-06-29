@@ -1,14 +1,14 @@
-.links{
-    margin-right: 2rem;
-    text-decoration: none;
-    color: white;
-    font-family:cursive;
+.links {
+  margin-right: 2rem;
+  text-decoration: none;
+  color: white;
+  font-family: cursive;
 
-    &.links:hover{
-     color: green;
-    }
+  &.links:hover {
+    color: green;
+  }
 
-    @media only screen and (max-width : 980px ){
-        display: none;
-    }
+  @media only screen and (max-width: 980px) {
+    display: none;
+  }
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "../../assets/logo_Mesa de trabajo 1.png";
 import stylesGlobal from "../../SASS/StylesGlobal.module.scss";
 import style from "./OrderView.module.scss";
@@ -13,35 +13,38 @@ import Button from "../../Componets/Button/Button";
 import { useNavigate, useParams } from "react-router-dom";
 import ContainerRightPageOrder from "../../Componets/ContainerRightPageOrder/ContainerRightPageOrder";
 import ContainerUploadImages from "../../Componets/ContainerUploadImages/ContainerUploadImages";
-import { getItem, setItem } from "../../services/servicesLocalStorage/servicesLocalStorage";
-
+import {
+  getItem,
+  setItem,
+} from "../../services/servicesLocalStorage/servicesLocalStorage";
 
 function OrderView() {
   const navigation = useNavigate();
   const { article } = useParams();
 
   const [handleContainerSubInside, setHandleContainerSubInside] = useState();
-  const [changeIcons, setChangeIcons] = useState(); 
+  const [changeIcons, setChangeIcons] = useState();
   const [handleContentInfoSelect, setHandleContentInfoSelect] = useState({
     header: "",
     label: "",
   });
 
   const [handleContentInfoInput, setHandleContentInfoInput] = useState({
+    Article: article,
     Color: "",
-    Cantidad: "",
-    Informacion: "",
+    Amount: "",
+    Information: "",
   });
 
   const options =
     article === "Hoodie"
-      ? [{ value: 1, label: "Algodon", header: "tela" }]
+      ? [{ value: 1, label: "Algodon", header: "fabric" }]
       : [
           { value: 0, label: "Select...", header: "" },
-          { value: 1, label: "Algodon", header: "tela" },
-          { value: 2, label: "Ojo de angel", header: "tela" },
-          { value: 3, label: "Dry Fit", header: "tela" },
-          { value: 4, label: "Micro durazno", header: "tela" },
+          { value: 1, label: "Algodon", header: "fabric" },
+          { value: 2, label: "Ojo de angel", header: "fabric" },
+          { value: 3, label: "Dry Fit", header: "fabric" },
+          { value: 4, label: "Micro durazno", header: "fabric" },
         ];
 
   const handleIconsVariation = () => {
@@ -50,6 +53,7 @@ function OrderView() {
 
   const handleInfoSelect = (value) => {
     setHandleContentInfoSelect(value);
+    setHandleContentInfoInput(value);
   };
 
   const handleInfoInput = (e) => {
@@ -62,10 +66,16 @@ function OrderView() {
 
   const handleSendFormulary = (e) => {
     e.preventDefault();
-    const datosStorage = getItem(process.env.REACT_APP_NAME_ARTICLE) || '[]';
+    const datosStorage = getItem(process.env.REACT_APP_NAME_ARTICLE) || "[]";
+    setHandleContentInfoInput(datosStorage);
     console.log(datosStorage);
-    setItem(process.env.REACT_APP_NAME_ARTICLE, [...datosStorage ,handleContentInfoInput]);
- };
+    setItem(process.env.REACT_APP_NAME_ARTICLE, {
+      ...datosStorage,
+      handleContentInfoInput,
+    });
+
+    handleNavigationMainView();
+  };
 
   const handleChangeContainerRight = () => {
     setHandleContentInfoSelect({ header: "" });
@@ -77,16 +87,30 @@ function OrderView() {
 
   const handleNavigationMainView = () => navigation("/");
 
-  
+  const cleanStorage = () => setItem(process.env.REACT_APP_NAME_ARTICLE, []);
 
+  useEffect(() => {
+    cleanStorage();
+  }, []);
 
   return (
     <div className={style.container}>
-      <div className={handleContentInfoSelect.header ? stylesGlobal.containerRightVisible : stylesGlobal.containerMain}>
+      <div
+        className={
+          handleContentInfoSelect.header
+            ? stylesGlobal.containerRightVisible
+            : stylesGlobal.containerMain
+        }
+      >
         <DropdownTop changeIcons={changeIcons} />
         <div className={style.containerTop}>
           <div className={stylesGlobal.containerImage}>
-            <img className={stylesGlobal.image} src={Image} alt="logo" onClick={handleNavigationMainView} />
+            <img
+              className={stylesGlobal.image}
+              src={Image}
+              alt="logo"
+              onClick={handleNavigationMainView}
+            />
           </div>
 
           <header className={stylesGlobal.viewsPages}>
@@ -131,10 +155,10 @@ function OrderView() {
                     <h3 className={style.header}>Cantidad de {article}</h3>
                     <Input
                       onChange={handleInfoInput}
-                      name="Cantidad"
+                      name="Amount"
                       type="number"
                       placeholder="Cantidad aqui"
-                      value={handleContentInfoSelect.Cantidad}
+                      value={handleContentInfoSelect.Amount}
                       onClick={handleChangeContainerRight}
                     />
                   </div>
@@ -144,28 +168,27 @@ function OrderView() {
                 <h3 className={style.header}>Informacion adicional</h3>
                 <TextArea
                   onChange={handleInfoInput}
-                  name="Informacion"
+                  name="Information"
                   type="text"
                   placeholder="Escribir aqui"
-                  value={handleContentInfoInput.Informacion}
+                  value={handleContentInfoInput.Information}
                   onClick={handleChangeContainerRight}
                 />
               </div>
             </form>
-              <div className={style.containerButton}>
-                
-                  <Button
-                    styleButton="Añadir"
-                    nameButton="Subir Imagenes"
-                    onClick={handleContainerChange}
-                  />
-                
-                <Button
-                  styleButton="Enviar"
-                  nameButton="Enviar"
-                  onClick={handleSendFormulary}
-                />
-              </div>
+            <div className={style.containerButton}>
+              <Button
+                styleButton="Añadir"
+                nameButton="Subir Imagenes"
+                onClick={handleContainerChange}
+              />
+
+              <Button
+                styleButton="Enviar"
+                nameButton="Enviar"
+                onClick={handleSendFormulary}
+              />
+            </div>
           </div>
         </div>
         <div className={background.zoombackground} />

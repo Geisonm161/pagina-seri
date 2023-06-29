@@ -1,18 +1,3 @@
-.icons {
-  transition: none;
-  position: relative;
-  top: 0.4rem;
-  color: rgb(255, 255, 255);
-  font-size: 2rem;
-  margin-right: 0.5rem;
-  cursor: pointer;
-
-  &.icons:hover {
-    color: blue;
-  }
-}
-
-
 .containerIcon {
   display: flex;
   flex-direction: column;
@@ -21,10 +6,9 @@
 
 .iconCloud {
   transition: none;
-  font-size: 3rem;
+  font-size: 2rem;
   color: white;
   transition: none;
-  
 }
 
 .containerInputImage {
@@ -38,45 +22,50 @@
   border-radius: 10px;
   margin-bottom: 1rem;
 
-  &:hover{
+  &:hover {
     .iconCloud {
-   color: blue;
-  } 
+      color: blue;
+    }
   }
-  
 }
 
-p{
-    font-size: 0.7rem;
-    margin-bottom: 0.5rem;
+p {
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
-.containerPair{
+.containerPair {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.container{
+.container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.header{
+.header {
   font-size: 0.8rem;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin-bottom: 1rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-bottom: 0.5rem;
 }
 
-h5{
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.h5Header {
+  font-size: 0.8rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.containerButton{
+h5 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.containerButton {
   display: flex;
-  justify-content: center;
-  margin-top: 1rem;
+  justify-content: space-between;
+  margin-top: 0.5rem;
 }

@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import style from "./ContainerUploadImages.module.scss";
-import { AiOutlineClose } from "react-icons/ai";
 import Input from "../Input/Input";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import TextArea from "../TextArea/TextArea";
 import Button from "../Button/Button";
-import {
-  setItem,
-  getItem,
-} from "../../services/servicesLocalStorage/servicesLocalStorage";
+import { setItem } from "../../services/servicesLocalStorage/servicesLocalStorage";
+import { useParams } from "react-router-dom";
 
 function ContainerUploadImages({ handleContainerChange }) {
+  const { article } = useParams();
+
   const [handleCarrierImage, setHandleCarrierImage] = useState([]);
-  const [handleInfoImage, setHandleInfoImage] = useState([]);
-  console.log(handleInfoImage);
+  const [handleInfoImage, setHandleInfoImage] = useState({ Article: article });
 
   const handleInfoInput = (e) => {
     const { name, files, value } = e.target;
@@ -40,12 +38,14 @@ function ContainerUploadImages({ handleContainerChange }) {
 
   const handleAddFormulary = (e) => {
     e.preventDefault();
-    setItem(process.env.REACT_APP_NAME_ARTICLE, [handleInfoImage]);
+    setItem(process.env.REACT_APP_NAME_ARTICLE, handleInfoImage);
+    handleContainerChange();
   };
+
+  const handleCloseFormulary = () => handleContainerChange();
 
   return (
     <div className={style.containerMain}>
-      <AiOutlineClose onClick={handleContainerChange} className={style.icons} />
       <div className={style.containerPair}>
         <div className={style.container}>
           <header className={style.header}>Diseño delantero</header>
@@ -108,7 +108,7 @@ function ContainerUploadImages({ handleContainerChange }) {
 
       <div className={style.containerPair}>
         <div className={style.container}>
-          <header className={style.header}>Adisional</header>
+          <header className={style.header}>Adicional</header>
           <div
             className={style.containerInputImage}
             onClick={handleCloudImageAdditional}
@@ -137,7 +137,7 @@ function ContainerUploadImages({ handleContainerChange }) {
         </div>
 
         <div className={style.container}>
-          <header className={style.header}>Adisional</header>
+          <header className={style.header}>Adicional</header>
           <div
             className={style.containerInputImage}
             onClick={handleCloudImageAdditional2}
@@ -166,16 +166,22 @@ function ContainerUploadImages({ handleContainerChange }) {
         </div>
       </div>
       <div className={style.select}>
-        <h5 className={style.header}>Informacion adicional</h5>
+        <h5 className={style.h5Header}>Informacion adicional</h5>
         <TextArea
           onChange={handleInfoInput}
-          name="Informacion"
+          name="InformationAdditional"
           type="text"
           placeholder="Escribir aqui"
-          value={handleInfoInput.Informacion}
+          value={handleInfoInput.InformationAdditional}
         />
       </div>
       <div className={style.containerButton}>
+        <Button
+          onClick={handleCloseFormulary}
+          styleButton="Cerrar"
+          nameButton="Cerrar"
+        />
+
         <Button
           onClick={handleAddFormulary}
           styleButton="Añadir"

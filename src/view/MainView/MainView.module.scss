@@ -6,6 +6,18 @@
   height: 56px;
 }
 
+.subContainer {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+  }
+}
+
 .containerh1 {
   width: 100%;
   display: flex;
@@ -15,6 +27,10 @@
   text-align: inherit;
   height: 90%;
   padding: 5px;
+
+  @media only screen and (max-width: 300px) {
+    width: 90vw;
+  }
 }
 
 .h1Main {
@@ -23,8 +39,18 @@
 }
 
 .parrafoMain {
-    background: rgba(0, 0, 0, 0.664);
-    padding: 5px;
+  background: rgba(0, 0, 0, 0.664);
+  color: white;
+  padding: 5px;
   font-size: 0.9rem;
   border-radius: 5px;
+}
+
+.containerEmail {
+  display: flex;
+  justify-content: center;
+}
+
+.containerNoneDisplay {
+  display: none;
 }

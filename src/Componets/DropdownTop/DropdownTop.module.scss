@@ -11,7 +11,7 @@
 
 .containerDropdownTrue {
   @include dropdown();
-  z-index: 3
+  z-index: 3;
 }
 
 .containerDropdownFalse {
@@ -31,4 +31,3 @@
     color: rgb(0, 8, 255);
   }
 }
-

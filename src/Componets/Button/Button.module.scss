@@ -1,7 +1,3 @@
-.containerButton {
-  margin: 0;
-}
-
 .buttonEnviar {
   padding: 0.5rem 2.5rem;
   border-radius: 10px;
@@ -37,9 +33,8 @@
 .openContainerInside {
   border-radius: 2rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  padding: 10px;
+  padding: 0.5rem 1rem;
   background: rgb(0, 241, 12);
-  margin-bottom: 1rem;
 
   &.openContainerInside:hover {
     border: solid white 1px;
@@ -56,9 +51,21 @@
   border-radius: 5px;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background: black;
     border: none;
-    
+  }
+}
+
+.buttonCerrar {
+  padding: 0.5rem 1rem;
+  background: rgb(0, 0, 0);
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+
+  &:hover {
+    background: black;
+    border: none;
   }
 }

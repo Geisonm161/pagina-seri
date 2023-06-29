@@ -10,8 +10,10 @@ function Button({ onClick, nameButton, type, styleButton }) {
     buttonClass = style.buttonBack;
   } else if (styleButton === "Añadir") {
     buttonClass = style.openContainerInside;
-  } else if (styleButton === 'Saber más'){
+  } else if (styleButton === "Saber más") {
     buttonClass = style.buttonSaber;
+  } else if (styleButton === "Cerrar") {
+    buttonClass = style.buttonCerrar;
   }
 
   return (

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  width: 100%;
 
   @media only screen and (max-width: 800px) {
     display: none;
@@ -10,8 +10,10 @@
 }
 
 .headerRight {
+  text-align: center;
   font-size: 1.5rem;
   margin: 1rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .image {
@@ -22,4 +24,5 @@
 
 .infoTela {
   font-size: 0.8rem;
+  font-family: cursive;
 }
