@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import background from "../../SASS/ZoomBackground.module.scss";
 import style from "./SelectArticleView.module.scss";
 import { useNavigate } from "react-router-dom";
@@ -12,17 +12,20 @@ import Landing from "../Landing/Landing";
 
 function SelectArticleView() {
   const navigate = useNavigate();
-  
+  const [access, setAccess] = useState(true);
+
   const handleAccessView = (e) => {
     navigate(`/order/${e.target.alt}`);
   };
-  
+
+  useEffect(()=>{setTimeout(() => {
+    
+    setAccess(false);
+  }, 5000);
+  })
   return (
     <div className={style.containerMain}>
       <div className={background.backgroundSelect} />
-      <div className={style.containerLanding}>
-        <Landing />
-      </div>
 
       <div className={style.containerButton}>
         <Button
@@ -63,6 +66,9 @@ function SelectArticleView() {
           onClick={handleAccessView}
         />
       </div>
+      {access && <div className={style.containerLanding}>
+        <Landing />
+      </div>}
     </div>
   );
 }
