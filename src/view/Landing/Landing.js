@@ -10,8 +10,8 @@ function Landing() {
     setAccessLanding(false);
     setTimeout(() => {
       setDeleteContainer(true);
-    }, 1500);
-  }, 2000);
+    }, 3000);
+  }, 4000);
 
   return (
     <div
