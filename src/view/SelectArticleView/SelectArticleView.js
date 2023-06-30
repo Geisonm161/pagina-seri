@@ -12,13 +12,14 @@ import Landing from "../Landing/Landing";
 
 function SelectArticleView() {
   const navigate = useNavigate();
-
+  
   const handleAccessView = (e) => {
     navigate(`/order/${e.target.alt}`);
   };
-
+  
   return (
     <div className={style.containerMain}>
+      <div className={background.backgroundSelect} />
       <div className={style.containerLanding}>
         <Landing />
       </div>
@@ -62,7 +63,6 @@ function SelectArticleView() {
           onClick={handleAccessView}
         />
       </div>
-      <div className={background.backgroundSelect} />
     </div>
   );
 }

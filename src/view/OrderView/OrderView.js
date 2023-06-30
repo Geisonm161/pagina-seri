@@ -97,6 +97,7 @@ function OrderView() {
   return (
     <div className={style.container}>
       <Landing />
+      <div className={background.zoombackground} />
 
       <div
         className={
@@ -194,7 +195,6 @@ function OrderView() {
             </div>
           </div>
         </div>
-        <div className={background.zoombackground} />
       </div>
       {handleContentInfoSelect.label && (
         <div

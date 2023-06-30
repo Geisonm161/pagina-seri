@@ -10,8 +10,8 @@ function Landing() {
     setAccessLanding(false);
     setTimeout(() => {
       setDeleteContainer(true);
-    }, 2000);
-  }, 5000);
+    }, 1500);
+  }, 2000);
 
   return (
     <div
@@ -20,7 +20,7 @@ function Landing() {
       } ${deleteContainer && style.deleteContainer}`}
     >
       <PacmanLoader 
-        color={'rgb(5, 21, 92)'}
+        color={'rgb(163, 163, 163)'}
         loading={true}
         size={90}
         aria-label="Loading Spinner"

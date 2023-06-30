@@ -28,14 +28,15 @@ function MainView() {
   const handleIconsVariation = () => {
     setChangeIcons(!changeIcons);
   };
-
+  
   const handleNavigationMainView = () => navigation("/");
-
+  
   const handleChangeRoute = () => navigation("/taller");
-
+  
   return (
     <div className={stylesGlobal.containerMain}>
       <Landing/>
+      <div className={background.backgroundMain} />
       <DropdownTop changeIcons={changeIcons} />
       <div className={style.containerTop}>
         <div className={stylesGlobal.containerImage}>
@@ -107,7 +108,6 @@ function MainView() {
           ))}
         </div>
       </div>
-      <div className={background.backgroundMain} />
     </div>
   );
 }
