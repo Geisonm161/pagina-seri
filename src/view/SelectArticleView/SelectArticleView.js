@@ -8,6 +8,7 @@ import imageSuera from "../../assets/suera-01.png";
 import imagePolo from "../../assets/polo de cuello-01-01.png";
 import imageHoodie from "../../assets/hoodie 1-01.png";
 import imageArticle from "../../assets/article page-01.png";
+import Landing from "../Landing/Landing";
 
 function SelectArticleView() {
   const navigate = useNavigate();
@@ -18,6 +19,10 @@ function SelectArticleView() {
 
   return (
     <div className={style.containerMain}>
+      <div className={style.containerLanding}>
+        <Landing />
+      </div>
+
       <div className={style.containerButton}>
         <Button
           styleButton="Back"

@@ -17,6 +17,7 @@ import {
   getItem,
   setItem,
 } from "../../services/servicesLocalStorage/servicesLocalStorage";
+import Landing from "../Landing/Landing";
 
 function OrderView() {
   const navigation = useNavigate();
@@ -95,6 +96,8 @@ function OrderView() {
 
   return (
     <div className={style.container}>
+      <Landing />
+
       <div
         className={
           handleContentInfoSelect.header

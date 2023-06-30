@@ -13,6 +13,7 @@ import {
   setItem,
   getItem,
 } from "../../services/servicesLocalStorage/servicesLocalStorage";
+import Landing from "../Landing/Landing";
 
 function MainView() {
   const navigation = useNavigate();
@@ -34,6 +35,7 @@ function MainView() {
 
   return (
     <div className={stylesGlobal.containerMain}>
+      <Landing/>
       <DropdownTop changeIcons={changeIcons} />
       <div className={style.containerTop}>
         <div className={stylesGlobal.containerImage}>

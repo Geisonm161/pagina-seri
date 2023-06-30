@@ -47,6 +47,7 @@ import { Icons } from "../../Componets/Icons/Icons";
 import DropdownTop from "../../Componets/DropdownTop/DropdownTop";
 import HeadersLink from "../../Componets/HeadersLink/HeadersLink";
 import { useNavigate } from "react-router-dom";
+import Landing from "../Landing/Landing";
 
 function ProductosView() {
   const navigation = useNavigate();
@@ -60,6 +61,8 @@ function ProductosView() {
 
   return (
     <div className={style.containerMain}>
+      <Landing />
+
       <DropdownTop changeIcons={changeIcons} />
       <div className={stylesGlobal.containerTop}>
         <div className={stylesGlobal.containerImage}>
