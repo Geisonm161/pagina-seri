@@ -1,31 +1,24 @@
 import React, { useEffect, useState } from "react";
-import background from "../../SASS/ZoomBackground.module.scss";
 import style from "./SelectArticleView.module.scss";
 import { useNavigate } from "react-router-dom";
 import Button from "../../Componets/Button/Button";
-import imageTshirt from "../../assets/t shirt-01-01-01.png";
+import imageTshirt from "../../assets/t shirt-01.png";
+import imagePolo from "../../assets/polo-01.png";
 import imageSuera from "../../assets/suera-01.png";
-import imagePolo from "../../assets/polo de cuello-01-01.png";
-import imageHoodie from "../../assets/hoodie 1-01.png";
-import imageArticle from "../../assets/article page-01.png";
-import Landing from "../Landing/Landing";
+import imageHoodie from "../../assets/hoodie-01.png";
+import imageArticle from "../../assets/article-01.png";
+import Background from "../../SASS/ZoomBackground.module.scss";
 
-function SelectArticleView() {
+const SelectArticleView = ()=> {
   const navigate = useNavigate();
-  const [access, setAccess] = useState(true);
 
   const handleAccessView = (e) => {
     navigate(`/order/${e.target.alt}`);
   };
 
-  useEffect(()=>{setTimeout(() => {
-    
-    setAccess(false);
-  }, 5000);
-  })
   return (
     <div className={style.containerMain}>
-      <div className={background.backgroundSelect} />
+      <div className={Background.backgroundSelect} />
 
       <div className={style.containerButton}>
         <Button
@@ -66,9 +59,6 @@ function SelectArticleView() {
           onClick={handleAccessView}
         />
       </div>
-      {access && <div className={style.containerLanding}>
-        <Landing />
-      </div>}
     </div>
   );
 }

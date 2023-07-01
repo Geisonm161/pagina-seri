@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Hoodie1 from "../../assets/Familia tania-01.png";
+import Hoodie1 from "../../assets/Familia tania-01 (1).png";
 import Hoodie2 from "../../assets/Familia tania-02.png";
 import Hoodie3 from "../../assets/Familia tania-03.png";
 import Hoodie4 from "../../assets/Familia tania-04.png";
@@ -47,9 +47,8 @@ import { Icons } from "../../Componets/Icons/Icons";
 import DropdownTop from "../../Componets/DropdownTop/DropdownTop";
 import HeadersLink from "../../Componets/HeadersLink/HeadersLink";
 import { useNavigate } from "react-router-dom";
-import Landing from "../Landing/Landing";
 
-function ProductosView() {
+const ProductosView =()=> {
   const navigation = useNavigate();
   const [changeIcons, setChangeIcons] = useState();
 
@@ -61,8 +60,6 @@ function ProductosView() {
 
   return (
     <div className={style.containerMain}>
-      <Landing />
-
       <DropdownTop changeIcons={changeIcons} />
       <div className={stylesGlobal.containerTop}>
         <div className={stylesGlobal.containerImage}>

@@ -12,7 +12,7 @@
   @include mixinBackgroundZoom();
 
   &.backgroundSelect::before {
-    @include mixinZoomBefore(url("../assets/fondo\ encargo-01.png"));
+    @include mixinZoomBefore(url("../assets/fondo\ encargo-01.jpg"));
   }
 }
 

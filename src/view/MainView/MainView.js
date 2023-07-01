@@ -13,9 +13,8 @@ import {
   setItem,
   getItem,
 } from "../../services/servicesLocalStorage/servicesLocalStorage";
-import Landing from "../Landing/Landing";
 
-function MainView() {
+const MainView = ()=> {
   const navigation = useNavigate();
   const datosStorage = getItem(process.env.REACT_APP_NAME_ARTICLE) || [];
   const extractObject = datosStorage.handleContentInfoInput;
@@ -35,7 +34,6 @@ function MainView() {
   
   return (
     <div className={stylesGlobal.containerMain}>
-      <Landing/>
       <div className={background.backgroundMain} />
       <DropdownTop changeIcons={changeIcons} />
       <div className={style.containerTop}>

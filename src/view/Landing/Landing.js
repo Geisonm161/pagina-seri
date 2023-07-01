@@ -1,29 +1,16 @@
-import React, { useEffect, useState } from "react";
-import PacmanLoader from "react-spinners/PacmanLoader";
+import ClockLoader from "react-spinners/ClockLoader";
 import style from "./Landing.module.scss";
 
 function Landing() {
-  const [accessLanding, setAccessLanding] = useState(true);
-  const [deleteContainer, setDeleteContainer] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setAccessLanding(false);
-      setTimeout(() => {
-        setDeleteContainer(true);
-      }, 4000);
-    }, 4500);
-  });
   return (
     <div
-      className={` ${
-        accessLanding ? style.containerLanding : style.containerMove
-      } ${deleteContainer && style.deleteContainer}`}
+      className={ style.containerLanding }
     >
-      <PacmanLoader
+      <ClockLoader
         color={"rgb(43, 255, 0)"}
         loading={true}
-        size={50}
+        size={150}
         aria-label="Loading Spinner"
         data-testid="loader"
       />

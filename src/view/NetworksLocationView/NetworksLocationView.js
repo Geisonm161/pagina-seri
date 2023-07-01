@@ -11,9 +11,8 @@ import Icono2 from "../../assets/iconos-02.png";
 import Icono3 from "../../assets/iconos-03.png";
 import Icono4 from "../../assets/iconos-04.png";
 import { useNavigate } from "react-router-dom";
-import Landing from "../Landing/Landing";
 
-function ContactView() {
+const ContactView = ()=> {
   const navigation = useNavigate();
 
   const [changeIcons, setChangeIcons] = useState();
@@ -26,8 +25,6 @@ function ContactView() {
 
   return (
     <div className={style.containerMain}>
-      <Landing />
-
       <DropdownTop changeIcons={changeIcons} />
       <div className={style.containerTop}>
         <div className={stylesGlobal.containerImage}>

@@ -7,9 +7,8 @@ import DropdownTop from "../../Componets/DropdownTop/DropdownTop";
 import HeadersLink from "../../Componets/HeadersLink/HeadersLink";
 import background from "../../SASS/ZoomBackground.module.scss";
 import { useNavigate } from "react-router-dom";
-import Landing from "../Landing/Landing";
 
-function WorkshopView() {
+const WorkshopView = ()=> {
   const navigation = useNavigate();
 
   const [changeIcons, setChangeIcons] = useState();
@@ -22,7 +21,6 @@ function WorkshopView() {
 
   return (
     <div className={stylesGlobal.containerMain}>
-      <Landing/>
       <DropdownTop changeIcons={changeIcons} />
       <div className={stylesGlobal.containerTop}>
         <div className={stylesGlobal.containerImage}>
