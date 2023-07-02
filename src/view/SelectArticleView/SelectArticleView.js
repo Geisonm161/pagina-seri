@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import style from "./SelectArticleView.module.scss";
 import { useNavigate } from "react-router-dom";
 import Button from "../../Componets/Button/Button";
@@ -9,7 +8,7 @@ import imageHoodie from "../../assets/hoodie-01.png";
 import imageArticle from "../../assets/article-01.png";
 import Background from "../../SASS/ZoomBackground.module.scss";
 
-const SelectArticleView = ()=> {
+const SelectArticleView = () => {
   const navigate = useNavigate();
 
   const handleAccessView = (e) => {
@@ -19,7 +18,6 @@ const SelectArticleView = ()=> {
   return (
     <div className={style.containerMain}>
       <div className={Background.backgroundSelect} />
-
       <div className={style.containerButton}>
         <Button
           styleButton="Back"
@@ -61,6 +59,6 @@ const SelectArticleView = ()=> {
       </div>
     </div>
   );
-}
+};
 
 export default SelectArticleView;
