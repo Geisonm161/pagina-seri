@@ -107,7 +107,7 @@ const ProductosView =()=> {
         <img src={Realizados4} alt="Hoddie5" className={style.image4} />
         <img src={Realizados5} alt="Hoddie6" className={style.image4} />
         <img src={Realizados6} alt="Hoddie1" className={style.image4} />
-        <img src={Realizados7} alt="Hoddie1" className={style.image4} />4
+        <img src={Realizados7} alt="Hoddie1" className={style.image4} />
         <img src={Realizados8} alt="Hoddie1" className={style.image4} />
         <img src={Realizados9} alt="Hoddie1" className={style.image4} />
         <img src={Realizados10} alt="Hoddie1" className={style.image4} />
